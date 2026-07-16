@@ -1,5 +1,5 @@
 name: "Teleinfo2MQTT"
-version: "10.0.0"
+version: "10.0.1"
 slug: "teleinfo2mqtt"
 description: "Serial to MQTT Teleinfo bridge (with checksum validation fix)"
 url: "https://github.com/guillaumejparis/teleinfo2mqtt"
