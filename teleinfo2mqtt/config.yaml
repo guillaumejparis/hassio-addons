@@ -3,7 +3,6 @@ version: "10.0.0"
 slug: "teleinfo2mqtt"
 description: "Publish Linky TIC teleinfo data to MQTT with Home Assistant auto-discovery (includes TIC checksum validation fix)"
 url: "https://github.com/guillaumejparis/teleinfo2mqtt"
-image: "ghcr.io/guillaumejparis/teleinfo2mqtt:{version}"
 arch:
   - aarch64
   - amd64
