@@ -1,0 +1,46 @@
+---
+
+########## GENERAL SETTINGS ######################################################################################################
+name: teleinfo2mqtt
+image: ghcr.io/guillaumejparis/teleinfo2mqtt
+version: 10.0.1
+slug: teleinfo2mqtt
+description: Serial to MQTT Teleinfo Bridge (with TIC checksum validation)
+arch:
+  - armhf
+  - armv7
+  - aarch64
+  - amd64
+url: https://github.com/guillaumejparis/teleinfo2mqtt
+services:
+  - mqtt:need
+udev: true
+uart: true
+environment:
+  HASSIO_ADDON: 'true'
+
+########## DEFAULT OPTIONS #######################################################################################################
+options:
+  EMIT_INTERVAL: 10
+  HASS_DISCOVERY_PREFIX: homeassistant
+  LOG_LEVEL: info
+  MQTT_BASE_TOPIC: teleinfo
+  MQTT_URL: mqtt://core-mosquitto:1883
+  MQTT_USER: ''
+  MQTT_PASSWORD: ''
+  SERIAL: /dev/ttyACM0
+  TIC_MODE: standard
+  TEMPO_ENABLED: false
+
+########## OPTIONS SCHEMA ########################################################################################################
+schema:
+  EMIT_INTERVAL: int(0,)
+  HASS_DISCOVERY_PREFIX: str
+  LOG_LEVEL: list(debug|info|error)
+  MQTT_BASE_TOPIC: str
+  MQTT_URL: str
+  MQTT_USER: str?
+  MQTT_PASSWORD: password?
+  SERIAL: str
+  TIC_MODE: list(history|standard)
+  TEMPO_ENABLED: bool

@@ -1,14 +1,19 @@
 # teleinfo2mqtt add-on
 
-This add-on deploys [teleinfo2mqtt](https://github.com/guillaumejparis/teleinfo2mqtt)
-in Home Assistant.
+This add-on allows you to easily deploy and integrate [teleinfo2mqtt](https://github.com/guillaumejparis/teleinfo2mqtt) to [Home-Assistant](https://www.home-assistant.io/).
 
-## Install
+This fork includes **TIC checksum validation** (fix for [upstream issue #103](https://github.com/fmartinou/teleinfo2mqtt/issues/103)).
 
-1. Open the add-on card in the Add-on Store
-2. Click **Install**
-3. Set options in the **Configuration** tab
-4. Start the add-on
-5. Check logs
+## How to install the add-on?
 
-For full option details, see [DOCS.md](./DOCS.md).
+### 1. Search for the `teleinfo2mqtt` add-on and click on the item
+
+### 2. Click on the `Install` button
+
+### 3. Enable the options `Start on boot` and `Watchdog` (and optionally `Auto update` if you wish)
+
+### 4. Go to the add-on `Configuration` tab and configure the add-on
+
+### 5. Go to the add-on `Info` tab and click on the `Start` button
+
+### 6. Go to the add-on `Log` tab and check that the add-on is working as expected

@@ -1,24 +1,20 @@
 # Guillaume Paris hass.io add-ons repository
 
-Community Home Assistant add-ons for Guillaume Paris projects.
+Guillaume Paris hass.io add-ons repository.
 
 ## Getting started
 
-### How to add this repository to Home Assistant
+### How to add this repository to Home-Assistant?
 
-1. Open **Settings** -> **Add-ons** -> **Add-on Store**
-2. Click the 3-dot menu -> **Repositories**
-3. Add this URL:
+#### 1. Go to the `Supervisor` section of your Home-Assistant instance.
 
-```text
-https://github.com/guillaumejparis/hassio-addons
-```
+#### 2. Click on the `Repositories` menu item
 
-### Available add-ons
+#### 3. Add the git http url ([https://github.com/guillaumejparis/hassio-addons.git](https://github.com/guillaumejparis/hassio-addons.git))
 
-- [teleinfo2mqtt](teleinfo2mqtt/README.md)
+### How to install an add-on?
 
-## Support
+> [**Install teleinfo2mqtt**](teleinfo2mqtt/README.md)
 
-- Open an issue in this repository for add-on packaging issues
-- Open an issue in `guillaumejparis/teleinfo2mqtt` for app/runtime bugs
+## Contact & Support
+- Create a [GitHub issue](https://github.com/guillaumejparis/hassio-addons/issues) for bug reports, feature requests, or questions
