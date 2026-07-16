@@ -12,7 +12,7 @@ startup: services
 boot: auto
 init: false
 options:
-  SERIAL: "/dev/ttyUSB0"
+  SERIAL: "/dev/ttyACM0"
   TIC_MODE: "standard"
   MQTT_URL: "mqtt://homeassistant.local:1883"
   MQTT_USER: ""
@@ -41,5 +41,7 @@ environment:
   HASSIO_ADDON: "true"
 devices:
   - /dev/ttyUSB0
+  - /dev/ttyUSB1
+  - /dev/ttyACM0
+  - /dev/ttyACM1
   - /dev/ttyAMA0
-  - /dev/serial/by-id/
