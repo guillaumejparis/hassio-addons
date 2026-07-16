@@ -1,0 +1,43 @@
+name: "Teleinfo2MQTT"
+version: "1.1.0"
+slug: "teleinfo2mqtt"
+description: "Publish Linky TIC teleinfo data to MQTT with Home Assistant auto-discovery (includes TIC checksum validation fix)"
+url: "https://github.com/guillaumejparis/teleinfo2mqtt"
+arch:
+  - aarch64
+  - amd64
+  - armhf
+  - armv7
+startup: services
+boot: auto
+init: false
+options:
+  SERIAL: "/dev/ttyUSB0"
+  TIC_MODE: "standard"
+  MQTT_URL: "mqtt://homeassistant.local:1883"
+  MQTT_USER: ""
+  MQTT_PASSWORD: ""
+  MQTT_BASE_TOPIC: "teleinfo"
+  HASS_DISCOVERY: "true"
+  HASS_DISCOVERY_PREFIX: "homeassistant"
+  LOG_LEVEL: "info"
+  EMIT_INTERVAL: 10
+  TEMPO_ENABLED: "false"
+  TEMPO_INTERVAL_MINUTE: 5
+schema:
+  SERIAL: str
+  TIC_MODE: "list(standard|history)"
+  MQTT_URL: str
+  MQTT_USER: str
+  MQTT_PASSWORD: str
+  MQTT_BASE_TOPIC: str
+  HASS_DISCOVERY: str
+  HASS_DISCOVERY_PREFIX: str
+  LOG_LEVEL: "list(trace|debug|info|warn|error|fatal)"
+  EMIT_INTERVAL: int
+  TEMPO_ENABLED: str
+  TEMPO_INTERVAL_MINUTE: int
+devices:
+  - /dev/ttyUSB0
+  - /dev/ttyAMA0
+  - /dev/serial/by-id/
