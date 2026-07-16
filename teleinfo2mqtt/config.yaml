@@ -1,20 +1,26 @@
 name: "Teleinfo2MQTT"
 version: "10.0.0"
 slug: "teleinfo2mqtt"
-description: "Publish Linky TIC teleinfo data to MQTT with Home Assistant auto-discovery (includes TIC checksum validation fix)"
+description: "Serial to MQTT Teleinfo bridge (with checksum validation fix)"
 url: "https://github.com/guillaumejparis/teleinfo2mqtt"
 arch:
   - aarch64
   - amd64
   - armhf
   - armv7
+services:
+  - mqtt:need
+udev: true
+uart: true
 startup: services
 boot: auto
 init: false
+environment:
+  HASSIO_ADDON: "true"
 options:
   SERIAL: "/dev/ttyACM0"
   TIC_MODE: "standard"
-  MQTT_URL: "mqtt://homeassistant.local:1883"
+  MQTT_URL: "mqtt://core-mosquitto:1883"
   MQTT_USER: ""
   MQTT_PASSWORD: ""
   MQTT_BASE_TOPIC: "teleinfo"
@@ -28,17 +34,15 @@ schema:
   SERIAL: str
   TIC_MODE: "list(standard|history)"
   MQTT_URL: str
-  MQTT_USER: str
-  MQTT_PASSWORD: str
+  MQTT_USER: str?
+  MQTT_PASSWORD: password?
   MQTT_BASE_TOPIC: str
-  HASS_DISCOVERY: str
+  HASS_DISCOVERY: "list(true|false)"
   HASS_DISCOVERY_PREFIX: str
   LOG_LEVEL: "list(trace|debug|info|warn|error|fatal)"
-  EMIT_INTERVAL: int
-  TEMPO_ENABLED: str
-  TEMPO_INTERVAL_MINUTE: int
-environment:
-  HASSIO_ADDON: "true"
+  EMIT_INTERVAL: "int(0,)"
+  TEMPO_ENABLED: "list(true|false)"
+  TEMPO_INTERVAL_MINUTE: "int(1,)"
 devices:
   - /dev/ttyUSB0
   - /dev/ttyUSB1
