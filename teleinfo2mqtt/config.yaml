@@ -3,6 +3,7 @@ version: "1.1.0"
 slug: "teleinfo2mqtt"
 description: "Publish Linky TIC teleinfo data to MQTT with Home Assistant auto-discovery (includes TIC checksum validation fix)"
 url: "https://github.com/guillaumejparis/teleinfo2mqtt"
+image: "ghcr.io/guillaumejparis/teleinfo2mqtt:{arch}-{version}"
 arch:
   - aarch64
   - amd64
@@ -37,6 +38,8 @@ schema:
   EMIT_INTERVAL: int
   TEMPO_ENABLED: str
   TEMPO_INTERVAL_MINUTE: int
+environment:
+  HASSIO_ADDON: "true"
 devices:
   - /dev/ttyUSB0
   - /dev/ttyAMA0
